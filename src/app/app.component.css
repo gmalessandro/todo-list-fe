@@ -1,0 +1,120 @@
+body {
+    margin: 0;
+    height: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.header {
+    background-color: rgb(247, 247, 248);
+    padding: 10px 10px;
+    color: rgb(136, 75, 235);
+    text-align: center;
+}
+
+.header::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.mat-list-option {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+[contenteditable="true"]:active,
+[contenteditable="true"]:focus {
+    border: none;
+    outline: none;
+}
+
+[contenteditable="true"]:focus>style {
+    display: block;
+    position: relative;
+    right: -80%;
+    top: -2em;
+    color: blue;
+    font-family: courier, monospace;
+    font-size: .75em;
+    line-height: 1.5;
+    padding: .5em;
+    background: #fff;
+    border: 1px solid #999;
+}
+
+[contenteditable="true"]:hover {
+    background: rgb(201, 201, 201);
+    color: black;
+    transition: 0.5s;
+}
+
+.mat-list-option:nth-child(odd) {
+    background: #f9f9f9;
+}
+
+.mat-list-option:hover {
+    background: #ddd;
+    transition: 0.5s;
+}
+
+.mat-list-option.checked {
+    background: #888;
+    color: #fff;
+    transition: 0.5s;
+}
+
+.addBtn:hover {
+    background: wheat;
+    color: black;
+    transition: 0.5s;
+}
+
+.delBtn:hover {
+    background: wheat;
+    color: black;
+    transition: 0.5s;
+}
+
+#inputVal {
+    font-size: 15px;
+}
+
+.close {
+    float: right;
+    right: 2px;
+    top: 2px;
+}
+
+.close:hover {
+    background-color: #f44336;
+    color: white;
+    transition: 0.5s;
+}
+
+.input-checkbox {
+    background-color: rgb(247, 247, 248);
+    border: 0;
+}
+
+.close-individual {
+    float: right;
+    right: 0px;
+    top: 0px;
+}
+
+.saveBtn {
+    float: right;
+    right: 2px;
+    bottom: 2px;
+}
+
+.saveBtn:hover {
+    background: wheat;
+    color: black;
+    transition: 0.5s;
+}

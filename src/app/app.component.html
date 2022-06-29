@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<body ng-app="first-angular-app">
+  <div id="DIV1" class="header">
+    <h1>{{title}}</h1>
+    <form [formGroup]="inputgroup">
+      <mat-form-field>
+        <mat-label>Type here...</mat-label>
+        <input matInput type="text" name="inputVal" formControlName="inputVal" (keypress.enter)="adding()">
+      </mat-form-field>
+      <button mat-button color="primary" (click)="adding()" class="addBtn">Add</button>
+      
+    </form>
+    <button mat-button color="primary" (click)="saveinDB()" class="saveBtn">Save
+      <mat-icon>save</mat-icon>
+    </button>      
+  </div>
+
+
+  <!--<mat-selection-list>                              QUESTO SERVE SE VOGLIO ELIMINARE SOLO GLI ITEM SELEZIONATI
+    <mat-list-option *ngFor="let todo of todolist" (click)="checking(todo)" [selected]="todo.status_item > 0" [ngClass]="todo.status_item > 0 ? 'checked' : ''">
+      {{todo.todo_item}} 
+    </mat-list-option>
+  </mat-selection-list>
+
+  <button mat-fab color="primary" class="close" #close (click)="deleteItem()">
+    <mat-icon>delete</mat-icon>
+  </button>-->
+
+
+  <mat-selection-list>
+    <mat-list-option *ngFor="let todo of todolist" (click)="checking(todo)" [selected]="todo.status_item > 0" [ngClass]="todo.status_item > 0 ? 'checked' : ''">
+      <div style="display:flex; justify-content:space-between;align-items:center">
+        <div style="display:flex;align-items:center">
+          <div style="display:flex; flex-direction:column">
+            <div>
+              <h3 id="toEdit" contentEditable="true" (click)="stopPropagation($event)" (keypress.enter)="stopPropagation($event)" >{{todo.todo_item}}</h3>
+            </div>
+            <div style="margin-top:-20px">
+            </div>
+          </div>
+        </div>
+        <div>
+          <button mat-icon-button (click)="deleteItem($event, todo)" class="close-individual">
+            <mat-icon>delete</mat-icon>
+          </button>
+          <button mat-icon-button (click)="editTodoItem($event,todo)">
+            <mat-icon>done</mat-icon>
+          </button>
+        </div>
+      </div>
+    </mat-list-option>
+  </mat-selection-list>
+  <button mat-fab color="primary" class="close" #close (click)="deleteMultiple()">
+    <mat-icon>delete</mat-icon>
+  </button>
+  <button mat-button color="primary" (click)="deleteMemory()" class="delBtn">Delete Memory</button>
+</body>
+
+</html>
